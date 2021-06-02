@@ -1,0 +1,51 @@
+body {
+    background-color: rgb(45, 52, 58);
+    color: white;
+}
+#canvas {
+    display: none;
+}
+#justClick {
+    display: none;
+    text-align: center;
+}
+#dankPic {
+    display: none;
+    border-radius: 5px;
+}
+#error {
+    display: none;
+    text-align: center;
+}
+.container {
+    display: flex;
+    width: 100%;
+    height: 70vh;
+    justify-content: center;
+    align-items: center;
+}
+.innerContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+header {
+    font-family: 'Great Vibes', cursive;
+    display: flex;
+    width: 100%;
+    height: 15vh;
+    justify-content: center;
+    align-items: center;
+}
+.title {
+    font-size: 10vh;
+    color: #ffca28;
+}
+.subtitle {
+    text-align: center;
+}
+.flexCenter {
+    display: flex;
+    justify-content: center;
+}
