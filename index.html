@@ -23,6 +23,11 @@
         <img id="dankPic" src="" alt="upcoming dank picture" />
         <h1 id="justClick">Just click the darn image to download it bud &#128074</h1>
         <h1 id="instructions">Just paste an image to this site bud, we'll make sure it comes out dank &#128293</h1>
+        <h1 id="instructionsDrag">Or drag some image into the friggin box &#128071</h1>
+        <div id="box" class="dragBox"
+          ondrop="onDrop(event)"
+          ondragover="dragging(event)"
+          ondragleave="doneDragging()"></div>
         <h1 id="error">That doesn't seem to be an image bud &#128078</h1>
         <canvas id="canvas"></canvas>
       </div>

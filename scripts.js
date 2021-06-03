@@ -3,10 +3,16 @@ const canvas = document.getElementById("canvas");
 const justClick = document.getElementById("justClick");
 const error = document.getElementById("error");
 const instructions = document.getElementById("instructions");
+const instructionsDrag = document.getElementById("instructionsDrag");
+const box = document.getElementById("box");
 
 document.onpaste = event => {
-    instructions.style.display = "none";
+    removeStuff();
     const dataTransfer = event.clipboardData || window.clipboardData;
+    handleDatatransfer(dataTransfer);
+}
+
+function handleDatatransfer(dataTransfer) {
     const file = dataTransfer.files[0];
     if (!isFileImage(file)) {
         error.style.display = "block";
@@ -51,4 +57,25 @@ function isFileImage(file) {
     const acceptedImageTypes = ['image/gif', 'image/jpeg', 'image/png'];
  
     return file && acceptedImageTypes.includes(file['type'])
+}
+
+function dragging(e) {
+    e.preventDefault();
+    box.style.borderColor = "#ffca28";
+}
+
+function doneDragging() {
+    box.style.borderColor = "white";
+}
+
+function onDrop(e) {
+    e.preventDefault();
+    removeStuff();
+    handleDatatransfer(e.dataTransfer);
+}
+
+function removeStuff() {
+    box.style.display = "none";
+    instructions.style.display = "none";
+    instructionsDrag.style.display = "none";
 }

@@ -28,6 +28,7 @@ body {
     display: flex;
     flex-direction: column;
     justify-content: center;
+    align-items: center;
 }
 
 header {
@@ -48,4 +49,11 @@ header {
 .flexCenter {
     display: flex;
     justify-content: center;
+}
+.dragBox {
+    width: 15vw;
+    height: 15vh;
+    border: 2px solid white;
+    border-style: dashed;
+    transition: border-color 0.5s;
 }
