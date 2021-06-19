@@ -17,6 +17,9 @@ body {
     display: none;
     text-align: center;
 }
+#input {
+    display: none;
+}
 .container {
     display: flex;
     width: 100%;

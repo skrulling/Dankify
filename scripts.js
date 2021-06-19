@@ -11,6 +11,12 @@ const error = document.getElementById("error");
 const instructions = document.getElementById("instructions");
 const instructionsDrag = document.getElementById("instructionsDrag");
 const box = document.getElementById("box");
+const input = document.getElementById("input");
+
+if( /Android|webOS|iPhone|iPad|Mac|Macintosh|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) {
+    box.style.display = "none";
+    input.style.display = "block";
+}
 
 document.onpaste = event => {
     removeStuff();
