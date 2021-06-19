@@ -1,3 +1,9 @@
+window.addEventListener("load", () => {
+  if ("serviceWorker" in navigator) {
+    navigator.serviceWorker.register("service-worker.js");
+  }
+});
+
 const imgElement = document.getElementById("dankPic");
 const canvas = document.getElementById("canvas");
 const justClick = document.getElementById("justClick");

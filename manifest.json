@@ -1,0 +1,29 @@
+{
+  "short_name": "Dankify",
+  "name": "Dankify: Make images dank",
+  "icons": [
+    {
+      "src": "/images/dank192.png",
+      "type": "image/png",
+      "sizes": "192x192"
+    },
+    {
+      "src": "/images/dnak512.png",
+      "type": "image/png",
+      "sizes": "512x512"
+    }
+  ],
+  "start_url": "/",
+  "background_color": "#2d343a",
+  "display": "fullscreen",
+  "scope": "/",
+  "theme_color": "#2d343a",
+  "description": "Weather forecast information",
+  "screenshots": [
+    {
+      "src": "/images/dankScreen.png",
+      "type": "image/png",
+      "sizes": "1437x1236"
+    }
+  ]
+}
