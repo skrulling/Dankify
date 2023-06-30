@@ -13,7 +13,7 @@ const instructionsDrag = document.getElementById("instructionsDrag");
 const box = document.getElementById("box");
 const input = document.getElementById("input");
 const clipboardSuccess = document.getElementById("clipboardSuccess");
-const clipboardSuccessOr = document.getElementById("clipboardSuccess");
+const clipboardSuccessOr = document.getElementById("clipboardSuccessOr");
 
 if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
     box.style.display = "none";
