@@ -1,7 +1,7 @@
 window.addEventListener("load", () => {
-  if ("serviceWorker" in navigator) {
-    navigator.serviceWorker.register("service-worker.js");
-  }
+    if ("serviceWorker" in navigator) {
+        navigator.serviceWorker.register("service-worker.js");
+    }
 });
 
 const imgElement = document.getElementById("dankPic");
@@ -13,7 +13,7 @@ const instructionsDrag = document.getElementById("instructionsDrag");
 const box = document.getElementById("box");
 const input = document.getElementById("input");
 
-if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) {
+if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
     box.style.display = "none";
     input.style.display = "block";
 }
@@ -32,11 +32,12 @@ function handleDatatransfer(dataTransfer) {
     }
     error.style.display = "none";
     const reader = new FileReader();
-    reader.onload = function(event) {
+    reader.onload = function (event) {
         const img = new Image();
         img.src = event.target.result;
-        img.onload = function() {
+        img.onload = function () {
             const dank = makeDank(img);
+            writeToClipboard(dank);
             imgElement.src = dank;
             wrapInAnchor();
             justClick.style.display = "block";
@@ -67,7 +68,7 @@ function wrapInAnchor() {
 
 function isFileImage(file) {
     const acceptedImageTypes = ['image/gif', 'image/jpeg', 'image/png'];
- 
+
     return file && acceptedImageTypes.includes(file['type'])
 }
 
@@ -90,4 +91,17 @@ function removeStuff() {
     box.style.display = "none";
     instructions.style.display = "none";
     instructionsDrag.style.display = "none";
+}
+
+function writeToClipboard(compressedImage) {
+    // Convert dataURL to blob
+    fetch(compressedImage)
+        .then(res => res.blob())
+        .then(blob => {
+            let data = [new ClipboardItem({ "image/png": blob })];
+
+            navigator.clipboard.write(data)
+                .then(() => console.log("Image copied to clipboard"))
+                .catch(err => console.error("Could not write image to clipboard: ", err));
+        });
 }
