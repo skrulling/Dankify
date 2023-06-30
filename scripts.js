@@ -13,6 +13,7 @@ const instructionsDrag = document.getElementById("instructionsDrag");
 const box = document.getElementById("box");
 const input = document.getElementById("input");
 const clipboardSuccess = document.getElementById("clipboardSuccess");
+const clipboardSuccessOr = document.getElementById("clipboardSuccess");
 
 if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
     box.style.display = "none";
@@ -103,11 +104,13 @@ function writeToClipboard(compressedImage) {
 
             navigator.clipboard.write(data)
                 .then(() => {
-                    clipboardSuccess.style.display = "block"; // Show the message
+                    clipboardSuccess.style.display = "block";
+                    clipboardSuccessOr.style.display = "block";
                 })
                 .catch(err => {
                     console.error("Could not write image to clipboard: ", err);
-                    clipboardSuccess.style.display = "none"; // Hide the message
+                    clipboardSuccess.style.display = "none";
+                    clipboardSuccessOr.style.display = "none";
                 });
         });
 }
@@ -122,8 +125,6 @@ function convertToPng(dataUrl) {
             const ctx = canvas.getContext("2d");
             ctx.drawImage(this, 0, 0);
             resolve(canvas.toDataURL("image/png"));
-            canvas = null;
-            ctx = null;
         }
         img.onerror = reject;
         img.src = dataUrl;
