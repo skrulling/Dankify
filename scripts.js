@@ -94,8 +94,8 @@ function removeStuff() {
 }
 
 function writeToClipboard(compressedImage) {
-    // Convert dataURL to blob
-    fetch(compressedImage)
+    convertToPng(compressedImage)
+        .then(pngUrl => fetch(pngUrl))
         .then(res => res.blob())
         .then(blob => {
             let data = [new ClipboardItem({ "image/png": blob })];
@@ -104,4 +104,21 @@ function writeToClipboard(compressedImage) {
                 .then(() => console.log("Image copied to clipboard"))
                 .catch(err => console.error("Could not write image to clipboard: ", err));
         });
+}
+
+
+function convertToPng(dataUrl) {
+    return new Promise((resolve, reject) => {
+        const img = new Image();
+        img.onload = function () {
+            const canvas = document.createElement("canvas");
+            canvas.width = this.width;
+            canvas.height = this.height;
+            const ctx = canvas.getContext("2d");
+            ctx.drawImage(this, 0, 0);
+            resolve(canvas.toDataURL("image/png"));
+        }
+        img.onerror = reject;
+        img.src = dataUrl;
+    });
 }
