@@ -9,14 +9,14 @@
     <link rel="stylesheet" href="styles.css" />
     <link rel="preconnect" href="https://fonts.gstatic.com" />
     <link rel="shortcut icon" type="image/jpg" href="images/favicon.ico"/>
-    <link
-      href="https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap"
-      rel="stylesheet"
-    />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Pixelify+Sans&display=swap" rel="stylesheet">
     <link rel="manifest" href="/manifest.json">
   </head>
   <body style="background-color: rgb(45, 52, 58); color: white;">
     <header>
+        <img src="images/iconDankify.png" alt="Dankify logo" class="titleImage"/>
         <h1 class="title">Dankify</h1>
     </header>
     <div class="container">
@@ -37,13 +37,16 @@
       </div>
     </div>
     <div class="tipContainer">
-        <div class="innerContainer">
+        <div id="tip" class="innerContainer" style="display: none;">
             <h3 class="subtitle">Hot tip for my lads on Windows &#129305 (win + shift + s) is the dankest way to
                 capure sweet screenshots &#128526
             </h3>
             <h3 class="subtitle">Or for my players on the Steve Jobs OS &#128187 <br> Use (cmd + shift + 4), then hold (ctrl) on capture and
               that sweet image will go straight to your clipboard ready to be pasted here bud &#129327
             </h3>
+        </div>
+        <div class="flexCenter">
+          <button id="helpButton" class="button-9" role="button">Need some help?</button>
         </div>
     </div>
 

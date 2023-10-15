@@ -1,65 +1,93 @@
 #canvas {
-    display: none;
+  display: none;
 }
 #justClick {
-    display: none;
-    text-align: center;
+  display: none;
+  text-align: center;
 }
 #dankPic {
-    display: none;
-    border-radius: 5px;
-    max-width: 70vw;
+  display: none;
+  border-radius: 5px;
+  max-width: 70vw;
 }
 #error {
-    display: none;
-    text-align: center;
+  display: none;
+  text-align: center;
 }
 #input {
-    display: none;
+  display: none;
 }
 .container {
-    display: flex;
-    width: 100%;
-    min-height: 70vh;
-    justify-content: center;
-    align-items: center;
+  display: flex;
+  width: 100%;
+  min-height: 70vh;
+  justify-content: center;
+  align-items: center;
 }
 .innerContainer {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 header {
-    font-family: 'Great Vibes', cursive;
-    display: flex;
-    width: 100%;
-    height: 15vh;
-    justify-content: center;
-    align-items: center;
+  font-family: "Pixelify Sans", sans-serif;
+  display: flex;
+  width: 100%;
+  height: 15vh;
+  justify-content: center;
+  align-items: center;
+  gap: 32px;
 }
 .title {
-    font-size: 10vh;
-    color: #ffca28;
+  font-size: 10vh;
+  color: #d19d41;
+}
+.titleImage {
+  height: 200px;
 }
 .subtitle {
-    text-align: center;
+  text-align: center;
 }
 .flexCenter {
-    display: flex;
-    justify-content: center;
+  display: flex;
+  justify-content: center;
 }
 .dragBox {
-    width: 15vw;
-    height: 15vh;
-    border: 2px solid white;
-    border-style: dashed;
-    transition: border-color 0.5s;
+  width: 15vw;
+  height: 15vh;
+  border: 2px solid white;
+  border-style: dashed;
+  transition: border-color 0.5s;
 }
 #clipboardSuccess {
-    display: none;
+  display: none;
 }
 #clipboardSuccessOr {
-    display: none;
+  display: none;
+}
+
+#helpButton {
+  display: inline-block;
+  outline: none;
+  cursor: pointer;
+  font-size: 16px;
+  line-height: 20px;
+  font-weight: 600;
+  border-radius: 8px;
+  padding: 14px 24px;
+  border: none;
+  transition: box-shadow 0.2s ease 0s, -ms-transform 0.1s ease 0s,
+    -webkit-transform 0.1s ease 0s, transform 0.1s ease 0s;
+  background: linear-gradient(
+    to bottom right,
+    #d19d41 0%,
+    /* Your provided color */ #b8852b 50%,
+    /* Darker shade */ #9e6d15 100% /* Darkest shade */
+  );
+
+  color: #fff;
+  position: fixed;
+  bottom: 10px;
 }
