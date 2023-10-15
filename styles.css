@@ -91,3 +91,23 @@ header {
   position: fixed;
   bottom: 10px;
 }
+
+/* Mobile responsiveness adjustments */
+@media (max-width: 768px) { /* Assuming breakpoint at 768px for tablets and below */
+    
+    body {
+        font-size: 11px; /* Reduce font size on mobile */
+    }
+
+    header {
+        height: 10vh; /* Reduce header height */
+    }
+
+    .title {
+        font-size: 6vh; /* Reduce title font size */
+    }
+
+    .titleImage {
+        height: 100px; /* Reduce the title image height */
+    }
+}
